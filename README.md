@@ -1,25 +1,27 @@
 # Project creation
 
 ```bash
-% uv init rgs-project          # Create a project
-
+% uv init rgs-project  # Create a project
 % cd rgs-project
-% uv run rgs-project           # Run the project command (see pyproject.toml > [project.scripts]
+% uv run rgs-project   # Run the project command (see pyproject.toml > [project.scripts])
 
-% uv add rich                  # Add the dependency `rich`
+% uv add rich          # Add the dependency `rich`
 ```
 
 # Quality checks
 
 ```bash
-% uv add --dev ty ruff  # Add development dependencies
+% uv add --dev ty ruff     # Add development dependencies
 
-% uv run ruff format    # Format code
-% uv run ruff check     # Lint your code
-% uv run ty check       # Type-check your code
+% uv run ruff format       # Format code
+% uv run ruff check        # Lint your code
+% uv run ruff check --fix  # Lint and auto-fix your code
+% uv run ty check          # Type-check your code
 ```
 
 # Testing
+
+Tests live in `<project root>/tests`.
 
 ```bash
 % uv add --dev pytest  # Add development dependency for testing
@@ -27,6 +29,8 @@
 ```
 
 # Automatic quality checks on commit
+
+Pre-commit configuration lives in `.pre-commit-config.yaml`.
 
 ```bash
 % uv add --dev pre-commit                                    # Add dev dependency for pre-commit hooks
