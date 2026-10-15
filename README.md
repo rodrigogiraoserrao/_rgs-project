@@ -41,3 +41,19 @@ Pre-commit configuration lives in `.pre-commit-config.yaml`.
 
 % uv run pre-commit run --all-files                          # Sanity check: run all hooks
 ```
+
+# GitHub Actions
+
+GH Action configuration lives in `.github/workflows/*.yaml`.
+
+# Publishing to (Test)PyPI
+
+If you save your token in `.env`, make sure to add that file to `.gitignore`!
+
+```bash
+% uv build                     # Build the project
+
+% set -a; source .env; set +a  # Export the UV_PUBLISH_TOKEN in .env (Unix/WSL)
+
+% uv publish --index testpypi  # Publish to Test PyPI
+```
