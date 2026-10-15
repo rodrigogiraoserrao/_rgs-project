@@ -15,4 +15,8 @@ jobs:
       - name: Set up Python
         run: uv python install
 
-      - name: Run Ruff formatting --check
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
+
+      - name: Run Ruff formatting
+        run: uv run ruff --check
